@@ -64,5 +64,5 @@ var App = {
 		//插入一个新参数
 		args.unshift('xxxx');
 		console.log.apply(console,args);
-	},
+	}
 };

@@ -28,6 +28,17 @@ var Class = function(parent) {    //parent是父类，通过Class新建的子类
 
     klass._super = klass._proto_;    //?用法不详
 
+    //为类添加一个proxy(委托函数)
+    klass.proxy = function(fun) {
+        var self = this;
+        return (function() {
+            return fun.apply(self,arguments);
+        });
+    };
+
+    //为实例也添加一个proxy函数
+    klass.fn.proxy = klass.proxy;
+
     //给类添加属性
     klass.extend = function(obj) {
         var extended = obj.extended;    //个人认为没有用
