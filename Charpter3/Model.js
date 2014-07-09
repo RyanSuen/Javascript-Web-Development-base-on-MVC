@@ -21,10 +21,10 @@ var Model = {
 	},
 
 	create: function() {
-		var object = Object.create(this);
-		object.parent = this;
-		object.prototype = object.fn = Object.create(this,prototype);
-		object.created();
+		var object = Object.create(this);    //此处this指Model这个对象
+		object.parent = this;    //将新建的object对象赋给object的parent属性。
+		object.prototype = object.fn = Object.create(this,prototype);    //其它就是创建了一个object.prototype.init = function() {}
+		object.created();    //调用created函数
 		this.inherited(object);
 		return object;
 	},
