@@ -25,5 +25,5 @@ var Person = function() {};
 //而我把它传给了Person.find,所以通过它可能调用。
 //findById(12);
 
-//成功编写了只能在Person内部才能调用的函数
+//成功编写了只能在Person内部才能调用的函数。
 Person.find(12);
