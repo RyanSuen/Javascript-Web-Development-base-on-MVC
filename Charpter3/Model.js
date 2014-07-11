@@ -29,7 +29,7 @@ var Model = {
 		return object;
 	},
 	init: function() {
-		var instance = Object.create(this.prototype);     //创建instance对象，并添加类方法init
+		var instance = Object.create(this.prototype);     //this还是指向Model,创建instance对象，并添加类方法init
 		instance.parent = this;    //将Model对象赋给instance的parent属性
 		instance.init.apply(instance, arguments);    //让instance的init方法上下文指向instance
 		return instance;
